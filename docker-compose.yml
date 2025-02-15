@@ -1,0 +1,13 @@
+services:
+  client-conseiller:
+    container_name: client-conseiller
+    image: artifactory-repo/client-conseiller-poc:0.0.1-SNAPSHOT
+    restart: always
+    environment:
+      - JAVA_TOOL_OPTIONS=-Xmx120000K
+    deploy:
+      resources:
+        limits:
+          memory: 8000m
+    ports:
+      - '9090:9090'
